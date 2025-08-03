@@ -2,7 +2,8 @@
   "build": {
     "arduino": {
       "ldscript": "esp32s3_out.ld",
-      "partitions": "default_16MB.csv"
+      "memory_type": "qio_opi",
+      "partitions": "default_4MB.csv"
     },
     "core": "esp32",
     "extra_flags": [
@@ -14,7 +15,7 @@
     ],
     "f_cpu": "240000000L",
     "f_flash": "80000000L",
-    "flash_mode": "qio",
+    "flash_mode": "dio",
     "psram_type": "qio",
     "hwids": [["0x303A", "0x1001"]],
     "mcu": "esp32s3",
@@ -27,12 +28,11 @@
     "openocd_target": "esp32s3.cfg"
   },
   "frameworks": ["arduino", "espidf"],
-  "name": "Waveshare ESP32-S3-Pico (16 MB FLASH, 2 MB PSRAM)",
+  "name": "Waveshare ESP32-S3-Pico (4 MB FLASH, 2 MB PSRAM)",
   "upload": {
-    "flash_size": "16MB",
+    "flash_size": "4MB",
     "maximum_ram_size": 327680,
-    "maximum_size": 16777216,
-    "use_1200bps_touch": true,
+    "maximum_size": 4194304,
     "wait_for_upload_port": true,
     "require_upload_port": true,
     "speed": 921600
